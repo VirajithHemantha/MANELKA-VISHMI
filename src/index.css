@@ -2,14 +2,14 @@
 @import "tailwindcss";
 
 /* =============================================
-   BOHO COLOR PALETTE
-   Ivory    #F5EFE0  — background / paper
-   Sand     #C9B99A  — light neutral accent
-   Taupe    #9C8470  — mid-tone text/borders
-   Terra    #C4714A  — primary accent (replaces sage)
-   Rust     #A84C2C  — deep accent / hover
-   Umber    #6B3D28  — dark rich tones
-   Sienna   #8B4513  — warm earthy accent
+   CHAMPAGNE GOLD COLOR PALETTE
+   Luminous Ivory    #FDFBF7  — background / paper
+   Sand     #EAE0D1  — light neutral accent
+   Taupe    #B8A99A  — mid-tone text/borders
+   Terra    #D4AF37  — primary accent (replaces sage)
+   Rust     #B89C54  — deep accent / hover
+   Umber    #5A4D3B  — dark rich tones
+   Sienna   #8C7752  — warm earthy accent
    ============================================= */
 
 @theme {
@@ -18,17 +18,17 @@
   --font-sans: "Inter", sans-serif;
 
   /* Primary accent — drives all `sage` classes */
-  --color-sage:   #C4714A;   /* Terracotta */
+  --color-sage:   #D4AF37;   /* Champagne Gold */
 
   /* Background — drives all `paper` classes */
-  --color-paper:  #F5EFE0;   /* Ivory */
+  --color-paper:  #FDFBF7;   /* Luminous Ivory */
 
   /* Extended boho palette */
-  --color-sand:   #C9B99A;
-  --color-taupe:  #9C8470;
-  --color-rust:   #A84C2C;
-  --color-umber:  #6B3D28;
-  --color-sienna: #8B4513;
+  --color-sand:   #EAE0D1;
+  --color-taupe:  #B8A99A;
+  --color-rust:   #B89C54;
+  --color-umber:  #5A4D3B;
+  --color-sienna: #8C7752;
 }
 
 body {

@@ -186,8 +186,8 @@ function RealisticPetal({ size = 20, className = "" }: { size?: number; classNam
       <svg width="100%" height="100%" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="petalGrad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#C4714A" stopOpacity="0.85" />
-            <stop offset="100%" stopColor="#9C8470" stopOpacity="0.65" />
+            <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.85" />
+            <stop offset="100%" stopColor="#B8A99A" stopOpacity="0.65" />
           </radialGradient>
         </defs>
         <path
@@ -537,10 +537,10 @@ export default function App() {
               className="absolute top-12 md:top-24 left-0 right-0 text-center z-10 pointer-events-none"
             >
               <h1 className="serif text-4xl md:text-6xl text-sage/80 font-light tracking-[0.2em] drop-shadow-xl">
-                Zerlin & Hashimi
+                Manelka & Vishmi
               </h1>
               <p className="mt-3 text-[10px] md:text-xs uppercase tracking-[0.6em] text-sage/60 font-bold">
-                23 May 2026
+                1 July 2026
               </p>
             </motion.div>
 
@@ -575,7 +575,7 @@ export default function App() {
                   opacity: [0.6, 0.9, 0.6],
                 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-[30%] -left-[20%] w-[140%] h-[140%] rounded-full bg-[radial-gradient(circle,rgba(196,113,74,0.45)_0%,transparent_60%)] blur-3xl"
+                className="absolute -top-[30%] -left-[20%] w-[140%] h-[140%] rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.45)_0%,transparent_60%)] blur-3xl"
               />
               <motion.div
                 animate={{
@@ -584,7 +584,7 @@ export default function App() {
                   opacity: [0.5, 0.8, 0.5],
                 }}
                 transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-[30%] -right-[20%] w-[140%] h-[140%] rounded-full bg-[radial-gradient(circle,rgba(156,132,112,0.4)_0%,transparent_60%)] blur-3xl"
+                className="absolute -bottom-[30%] -right-[20%] w-[140%] h-[140%] rounded-full bg-[radial-gradient(circle,rgba(184,169,154,0.4)_0%,transparent_60%)] blur-3xl"
               />
 
               {!reduceEffects &&
@@ -614,9 +614,9 @@ export default function App() {
                       <Flower2 className="text-sage/20 w-4 h-4 md:w-6 md:h-6" />
                     ) : (
                       <div
-                        className="rounded-full shadow-[0_0_15px_rgba(196,113,74,0.4)]"
+                        className="rounded-full shadow-[0_0_15px_rgba(212,175,55,0.4)]"
                         style={{
-                          backgroundColor: i % 2 === 0 ? "#C4714A" : "#A84C2C",
+                          backgroundColor: i % 2 === 0 ? "#D4AF37" : "#B89C54",
                           width: Math.random() * 6 + 2 + "px",
                           height: Math.random() * 6 + 2 + "px",
                           filter: `blur(${Math.random() * 1}px)`,
@@ -667,7 +667,7 @@ export default function App() {
                     key={`bokeh-${i}`}
                     className="absolute rounded-full mix-blend-soft-light"
                     style={{
-                      backgroundColor: i % 2 === 0 ? "#9C8470" : "#F5EFE0",
+                      backgroundColor: i % 2 === 0 ? "#B8A99A" : "#FDFBF7",
                       opacity: 0.3,
                       width: Math.random() * 150 + 100 + "px",
                       height: Math.random() * 150 + 100 + "px",
@@ -813,7 +813,7 @@ export default function App() {
             <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-32 bg-sage/5 blur-3xl rounded-full" />
 
             <motion.h2 whileHover={{ scale: 1.05 }} className="script text-[13vw] sm:text-6xl md:text-9xl text-sage drop-shadow-lg relative z-10 leading-none">
-              Zerlin
+              Manelka
             </motion.h2>
 
             <div className="relative flex items-center justify-center shrink-0">
@@ -830,7 +830,7 @@ export default function App() {
             </div>
 
             <motion.h2 whileHover={{ scale: 1.05 }} className="script text-[13vw] sm:text-6xl md:text-9xl text-sage drop-shadow-lg relative z-10 leading-none">
-              Hashimi
+              Vishmi
             </motion.h2>
           </div>
 
@@ -966,10 +966,10 @@ export default function App() {
                     ].map(([pos, rot], i) => (
                       <div key={i} className={`absolute ${pos} w-7 h-7`}>
                         <svg viewBox="0 0 28 28" fill="none" className={`w-full h-full ${rot} opacity-40`}>
-                          <path d="M2 2 C2 2, 14 2, 14 14" stroke="rgb(156 132 112)" strokeWidth="0.8" fill="none" />
-                          <path d="M2 2 C8 2, 2 8, 2 14" stroke="rgb(156 132 112)" strokeWidth="0.8" fill="none" />
-                          <circle cx="4" cy="4" r="1.2" fill="rgb(196 113 74)" opacity="0.5" />
-                          <path d="M6 2 C6 2, 6 6, 10 6" stroke="rgb(196 113 74)" strokeWidth="0.6" fill="none" opacity="0.5" />
+                          <path d="M2 2 C2 2, 14 2, 14 14" stroke="rgb(184 169 154)" strokeWidth="0.8" fill="none" />
+                          <path d="M2 2 C8 2, 2 8, 2 14" stroke="rgb(184 169 154)" strokeWidth="0.8" fill="none" />
+                          <circle cx="4" cy="4" r="1.2" fill="rgb(212 175 55)" opacity="0.5" />
+                          <path d="M6 2 C6 2, 6 6, 10 6" stroke="rgb(212 175 55)" strokeWidth="0.6" fill="none" opacity="0.5" />
                         </svg>
                       </div>
                     ))}
@@ -997,25 +997,18 @@ export default function App() {
                       <div className="flex-1 h-px bg-gradient-to-l from-transparent to-taupe/55" />
                     </div>
 
-                    {/* logo */}
-                    <motion.div
-                      animate={{ scale: [1, 1.04, 1] }}
-                      transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                      className="-mb-6 sm:-mb-2 md:mb-0"
-                    >
-                      <img src="/images/logo.png" alt="Z&H Logo" className="w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 object-contain drop-shadow-md" />
-                    </motion.div>
+                    {/* logo removed */}
 
                     {/* hosting families */}
                     <div className="space-y-0.5">
                       <p className="serif text-[9px] sm:text-[10px] md:text-[13px] uppercase tracking-[0.3em] text-umber font-normal leading-relaxed">
-                        MR. &amp; MRS. ZAKEER
+                        MR. &amp; MRS. PUSHPAKUMARA
                       </p>
                       <p className="text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-taupe font-medium">
                         TOGETHER WITH
                       </p>
                       <p className="serif text-[9px] sm:text-[10px] md:text-[13px] uppercase tracking-[0.3em] text-umber font-normal leading-relaxed">
-                        MR. &amp; MRS. ZAFIR ISMAIL
+                        MR. &amp; MRS. PERERA
                       </p>
                     </div>
 
@@ -1026,11 +1019,11 @@ export default function App() {
                     {/* couple names */}
                     <div className="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-4 max-w-full px-2">
                       <span className="script text-[26px] sm:text-[32px] md:text-[48px] text-sage drop-shadow-sm leading-[1.1]">
-                        Zerlin
+                        Manelka
                       </span>
                       <span className="text-taupe/50 text-sm md:text-xl font-serif">&amp;</span>
                       <span className="script text-[26px] sm:text-[32px] md:text-[48px] text-sage drop-shadow-sm leading-[1.1]">
-                        Hashimi
+                        Vishmi
                       </span>
                     </div>
 
@@ -1039,16 +1032,16 @@ export default function App() {
                       <div className="h-px flex-1 bg-sand/45" />
                       <div className="flex flex-col items-center gap-0.5">
                         <span className="serif text-[22px] sm:text-[28px] md:text-4xl text-umber font-medium leading-none">
-                          23
+                          01
                         </span>
                         <span className="text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-[0.3em] text-taupe font-bold">
-                          MAY · SATURDAY
+                          JULY · WEDNESDAY
                         </span>
                         <span className="text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-taupe font-bold">
-                          7:15 PM · 2026
+                          7:00 PM · 2026
                         </span>
                         <span className="serif mt-1 block max-w-[200px] px-2 text-[10px] sm:text-[11px] md:text-[12px] uppercase tracking-[0.12em] text-umber/75 text-center leading-snug break-words font-medium">
-                          GRAND BALLROOM, WATERS EDGE
+                          PARADISE INN, BODGODA
                         </span>
                       </div>
                       <div className="h-px flex-1 bg-sand/45" />
@@ -1111,7 +1104,7 @@ export default function App() {
             className="w-full h-full col-span-2 lg:col-span-2"
           >
             <div className="w-full h-[220px] md:h-[350px] lg:h-[350px] relative overflow-hidden rounded-[2rem] shadow-2xl border border-white/40 ring-1 ring-black/5">
-              <div className="w-full h-full bg-[#F5EFE0] p-2 md:p-8 flex flex-col items-center justify-center text-center space-y-2 md:space-y-4 relative group">
+              <div className="w-full h-full bg-[#FDFBF7] p-2 md:p-8 flex flex-col items-center justify-center text-center space-y-2 md:space-y-4 relative group">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-40 pointer-events-none" />
                 <div className="relative z-10 space-y-2 md:space-y-8 scale-[0.9] md:scale-100">
                   <div className="space-y-1">
@@ -1120,18 +1113,18 @@ export default function App() {
                   </div>
 
                   <div className="flex flex-col items-center">
-                    <p className="text-[8px] md:text-xs uppercase tracking-[0.4em] text-zinc-400 font-black mb-1 md:mb-2">Saturday</p>
+                    <p className="text-[8px] md:text-xs uppercase tracking-[0.4em] text-zinc-400 font-black mb-1 md:mb-2">Wednesday</p>
                     <div className="relative inline-block px-6 md:px-8 py-1 md:py-2 border-y border-sage/30">
-                      <p className="serif text-5xl md:text-8xl font-medium text-sage leading-none">23</p>
+                      <p className="serif text-5xl md:text-8xl font-medium text-sage leading-none">01</p>
                       <motion.div
                         animate={{ opacity: [0.4, 1, 0.4] }}
                         transition={{ repeat: Infinity, duration: 2 }}
-                        className="absolute -top-1 -right-1 text-[#A84C2C]"
+                        className="absolute -top-1 -right-1 text-[#B89C54]"
                       >
                         <Sparkles size={12} className="md:w-4 md:h-4" />
                       </motion.div>
                     </div>
-                    <p className="serif text-sm md:text-2xl font-light tracking-[0.2em] mt-2 md:mt-3">MAY</p>
+                    <p className="serif text-sm md:text-2xl font-light tracking-[0.2em] mt-2 md:mt-3">JULY</p>
                   </div>
 
                   <div className="pt-1">
@@ -1156,21 +1149,22 @@ export default function App() {
             <FlipCard
               containerClassName="w-full h-[380px] md:h-[350px] lg:h-[350px]"
               front={
-                <div className="w-full h-full bg-[#F5EFE0] p-6 flex flex-col justify-center items-center text-center relative group overflow-hidden">
+                <div className="w-full h-full bg-[#FDFBF7] p-6 flex flex-col justify-center items-center text-center relative group overflow-hidden">
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-sage/10 rounded-full blur-3xl pointer-events-none" />
                   <div className="relative z-10 space-y-3 md:space-y-6">
                     <div className="flex flex-col items-center gap-1">
                       <p className="serif italic text-lg md:text-2xl text-umber group-hover:scale-110 transition-transform">Kindly</p>
                       <h3 className="serif text-2xl md:text-4xl tracking-[0.3em] font-medium text-umber">RSVP</h3>
                     </div>
-                    <motion.div
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                      className="group-hover:scale-110 transition-transform duration-500"
-                    >
-                      <img src="/images/logo.png" alt="Z&H Logo" className="w-[45vw] h-[45vw] sm:w-[220px] sm:h-[220px] md:w-[280px] md:h-[280px] object-contain drop-shadow-xl" />
-                    </motion.div>
-                    <p className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-zinc-400 font-bold mt-1">by 04.05.2026</p>
+                    {/* logo removed */}
+                    <div className="flex flex-col gap-2 mt-2">
+                      <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-bold">
+                        Manelka: 077 032 2275
+                      </p>
+                      <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-zinc-500 font-bold">
+                        Vishmi: 074 372 6815
+                      </p>
+                    </div>
                   </div>
                 </div>
               }
@@ -1194,8 +1188,8 @@ export default function App() {
               front={
                 <div className="w-full h-full relative group">
                   <img
-                    src="https://www.watersedge.lk/wp-content/uploads/2026/01/004A2024-1024x1536.jpg"
-                    alt="Waters Edge Grand Ballroom"
+                    src="/WhatsApp Image 2026-06-11 at 23.02.11.jpeg"
+                    alt="Paradise Inn"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
@@ -1206,16 +1200,16 @@ export default function App() {
                       The Location
                     </p>
                     <h3 className="serif text-2xl md:text-5xl text-sage leading-tight drop-shadow-sm font-medium">
-                      Waters Edge
+                      Paradise Inn
                       <br />
-                      Grand Ballroom
+                      Bodgoda
                     </h3>
 
                     <motion.button
                       data-no-flip
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => window.open("https://maps.app.goo.gl/3EQ7xzj3EX9T2xEx6", "_blank")}
+                      onClick={() => window.open("https://maps.app.goo.gl/7BWcUBGpyToFahi48", "_blank")}
                       className="mt-3 md:mt-5 px-5 py-2 md:px-7 md:py-3 bg-sage text-white rounded-full text-[9px] md:text-xs font-bold uppercase tracking-widest hover:bg-zinc-800 transition-colors"
                     >
                       View Map
@@ -1224,23 +1218,23 @@ export default function App() {
 
                   <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-sage flex items-center gap-3 bg-white/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/60 shadow-lg">
                     <MapPin className="text-sage animate-bounce" size={16} />
-                    <p className="serif text-[10px] md:text-sm tracking-[0.2em] font-bold uppercase">Waters Edge</p>
+                    <p className="serif text-[10px] md:text-sm tracking-[0.2em] font-bold uppercase">Paradise Inn</p>
                   </div>
                 </div>
               }
               back={
                 <>
                   <MapPin size={24} className="text-sage mb-4 md:mb-6 opacity-70 md:w-9 md:h-9" />
-                  <h4 className="serif text-2xl md:text-4xl text-sage mb-2 md:mb-4">Waters Edge Grand Ballroom</h4>
+                  <h4 className="serif text-2xl md:text-4xl text-sage mb-2 md:mb-4">Paradise Inn, Bodgoda</h4>
                   <p className="text-[10px] md:text-sm text-zinc-500 uppercase tracking-widest leading-loose mb-4 md:mb-6">
-                    Waters Edge
+                    Paradise Inn
                     <br />
-                    Grand Ballroom
+                    Bodgoda
                   </p>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => window.open("https://maps.app.goo.gl/3EQ7xzj3EX9T2xEx6", "_blank")}
+                    onClick={() => window.open("https://maps.app.goo.gl/7BWcUBGpyToFahi48", "_blank")}
                     className="px-6 py-2 md:px-8 md:py-3 bg-sage text-white rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-zinc-800 transition-colors"
                   >
                     View Map
@@ -1294,13 +1288,23 @@ export default function App() {
 
                   <div className="w-full max-w-sm space-y-4 md:space-y-6 text-left">
                     <div className="flex items-start gap-2 md:gap-4">
-                      <span className="serif text-sage font-bold text-[10px] md:text-base w-12 md:w-20 text-right shrink-0 pt-1">7:45 PM</span>
+                      <span className="serif text-sage font-bold text-[10px] md:text-base w-12 md:w-20 text-right shrink-0 pt-1">6:35 PM</span>
                       <div className="w-px h-full bg-sage/30 relative mt-2 -ml-[1px] md:-ml-2 shrink-0">
                         <div className="absolute top-0 -left-[3px] w-2 h-2 rounded-full bg-sage" />
                       </div>
                       <div>
-                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Nikkah Ceremony</p>
-                        <p className="serif text-[10px] md:text-xs italic text-zinc-500">Followed by Dinner</p>
+                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Poruwa Ceremony</p>
+                        <p className="serif text-[10px] md:text-xs italic text-zinc-500">6:35 PM to 7:06 PM</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-2 md:gap-4 mt-4 md:mt-6">
+                      <span className="serif text-sage font-bold text-[10px] md:text-base w-12 md:w-20 text-right shrink-0 pt-1">7:00 PM</span>
+                      <div className="w-px h-full bg-sage/30 relative mt-2 -ml-[1px] md:-ml-2 shrink-0">
+                        <div className="absolute top-0 -left-[3px] w-2 h-2 rounded-full bg-sage" />
+                      </div>
+                      <div>
+                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Evening Reception</p>
                       </div>
                     </div>
                   </div>
