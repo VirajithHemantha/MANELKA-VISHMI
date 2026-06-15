@@ -210,12 +210,15 @@ type GuestEntry = {
 };
 
 function RSVPForm() {
-  const endpoint = (import.meta as any).env?.VITE_RSVP_ENDPOINT as string | undefined;
+  const endpoint = "https://script.google.com/macros/s/AKfycbzPNMtKWYGUeTCY6VpTqXUx2SCnLav3pVzaTc_0Dvx-cEHxYuWleC-NUByLE1RwSuVJ/exec";
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  const guestNameFromUrl = urlParams.get("to") || "";
 
   const [attendance, setAttendance] = useState<Attendance>("yes");
   const [partyType, setPartyType] = useState<PartyType>("individual");
   const [guestCount, setGuestCount] = useState<number>(1);
-  const [guests, setGuests] = useState<GuestEntry[]>([{ name: "", meal: "non-veg" }]);
+  const [guests, setGuests] = useState<GuestEntry[]>([{ name: guestNameFromUrl, meal: "non-veg" }]);
 
   const [submitting, setSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -285,24 +288,16 @@ function RSVPForm() {
 
     setSubmitting(true);
     try {
-      // Try JSON request first (works if endpoint supports CORS).
-      const res = await fetch(endpoint, {
+      // Send as text/plain to avoid CORS preflight, but stringify the JSON
+      await fetch(endpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(payload),
       });
-      if (!res.ok) throw new Error(String(res.status));
+      // Google Apps Script usually returns an opaque response in no-cors or plain text
       setSuccessMessage("RSVP saved. Thank you!");
     } catch {
-      try {
-        // Fallback for Apps Script deployments without CORS.
-        const fd = new FormData();
-        fd.append("payload", JSON.stringify(payload));
-        await fetch(endpoint, { method: "POST", mode: "no-cors", body: fd });
-        setSuccessMessage("RSVP submitted. Thank you!");
-      } catch {
-        setErrorMessage("Could not submit RSVP. Please try again.");
-      }
+      setErrorMessage("Could not submit RSVP. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -315,7 +310,7 @@ function RSVPForm() {
       <p className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-widest mb-4 md:mb-6 text-center leading-relaxed">
         Please let us know by
         <br />
-        04.05.2026
+        20.06.2026
       </p>
 
       <form onSubmit={submit} className="space-y-4 md:space-y-4 px-1 md:px-2">
@@ -431,6 +426,9 @@ function RSVPForm() {
 }
 
 export default function App() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const guestNameFromUrl = urlParams.get("to");
+
   const [isFlapOpen, setIsFlapOpen] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
@@ -711,12 +709,7 @@ export default function App() {
                 />
               )}
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 md:space-y-6">
-                <span className="serif text-white/50 text-lg md:text-3xl tracking-[0.4em] md:tracking-[0.6em] uppercase text-center px-4">
-                  The Invitation
-                </span>
-                <div className="w-10 md:w-16 h-px bg-white/20" />
-              </div>
+
 
               <div className="absolute bottom-0 left-0 right-0 h-[65%] bg-white/5 clip-path-envelope-bottom pointer-events-none rounded-b-[2rem]" />
               <div className="absolute bottom-0 left-0 right-0 h-[65%] bg-gradient-to-t from-umber/35 via-umber/10 to-transparent clip-path-envelope-bottom pointer-events-none rounded-b-[2rem]" />
@@ -732,6 +725,19 @@ export default function App() {
                 <div className="absolute inset-0 opacity-22 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] pointer-events-none" />
                 <div className="absolute inset-0 bg-gradient-to-b from-white/18 via-transparent to-umber/25" />
                 <div className="absolute top-0 left-0 right-0 h-px bg-white/25" />
+
+                <div className="relative z-10 flex flex-col items-center justify-center space-y-4 md:space-y-6 mt-2 md:mt-4 w-full">
+                  {guestNameFromUrl ? (
+                    <span className="serif text-white/80 text-xl md:text-3xl tracking-[0.2em] md:tracking-[0.3em] uppercase text-center px-6 drop-shadow-md">
+                      {guestNameFromUrl}
+                    </span>
+                  ) : (
+                    <span className="serif text-white/50 text-lg md:text-3xl tracking-[0.4em] md:tracking-[0.6em] uppercase text-center px-4">
+                      The Invitation
+                    </span>
+                  )}
+                  <div className="w-10 md:w-16 h-px bg-white/20" />
+                </div>
               </motion.div>
 
               {!isFlapOpen && (
@@ -799,6 +805,19 @@ export default function App() {
             <p className="text-[10px] md:text-sm uppercase tracking-[0.6em] font-bold">With joy in our hearts</p>
             <div className="h-px w-8 md:w-16 bg-current opacity-30" />
           </motion.div>
+
+          {guestNameFromUrl && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={isOpened ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+              transition={{ delay: 1.2, duration: 1 }}
+              className="mt-4 md:mt-6 mb-2"
+            >
+              <p className="serif text-2xl md:text-4xl text-sage/90 tracking-wide drop-shadow-sm">
+                Dear {guestNameFromUrl},
+              </p>
+            </motion.div>
+          )}
 
           <h1 className="flex flex-col items-center px-2">
             <span className="serif italic text-3xl sm:text-5xl md:text-[8rem] text-sage font-light leading-tight drop-shadow-sm mb-1 md:mb-6">
@@ -1297,7 +1316,7 @@ export default function App() {
                         <p className="serif text-[10px] md:text-xs italic text-zinc-500">6:35 PM to 7:06 PM</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start gap-2 md:gap-4 mt-4 md:mt-6">
                       <span className="serif text-sage font-bold text-[10px] md:text-base w-12 md:w-20 text-right shrink-0 pt-1">7:00 PM</span>
                       <div className="w-px h-full bg-sage/30 relative mt-2 -ml-[1px] md:-ml-2 shrink-0">
