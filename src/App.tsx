@@ -19,6 +19,31 @@ import {
   Sparkles,
 } from "lucide-react";
 
+const galleryImages = [
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.16 (1).jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.16.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.39.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.40 (1).jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.40 (2).jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.40.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.41 (1).jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.41.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.42 (1).jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.42.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.43 (1).jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.43.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.44 (1).jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.44.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.45 (1).jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.45.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.46 (1).jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.46.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.47 (1).jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.47.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.48.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 00.03.49 (1).jpeg"
+];
+
 // FlipCard Component with 3D Tilt Effect + Premium Mobile Tap Hint
 function FlipCard({
   front,
@@ -696,11 +721,11 @@ export default function App() {
               className="relative w-full max-w-2xl h-80 md:h-[450px] rounded-[2.25rem] shadow-[0_34px_80px_-22px_rgba(0,0,0,0.55)] flex flex-col items-center justify-center z-10 overflow-hidden"
             >
               {/* premium envelope material */}
-              <div className="absolute inset-0 bg-gradient-to-b from-sage via-sage/90 to-rust" />
+              <div className="absolute inset-0 bg-envelope border-4 border-envelope-border rounded-[2.25rem]" />
               <div className="absolute inset-0 opacity-25 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-br from-white/16 via-transparent to-umber/25 pointer-events-none" />
-              <div className="absolute inset-[10px] rounded-[1.8rem] border border-white/18 pointer-events-none" />
-              <div className="absolute inset-[16px] rounded-[1.55rem] border border-umber/10 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/16 via-transparent to-black/10 pointer-events-none" />
+              <div className="absolute inset-[10px] rounded-[1.8rem] border-2 border-envelope-border pointer-events-none" />
+              <div className="absolute inset-[16px] rounded-[1.55rem] border border-envelope-border/50 pointer-events-none" />
               {!reduceEffects && (
                 <motion.div
                   animate={{ opacity: [0.18, 0.32, 0.18], scale: [1, 1.04, 1] }}
@@ -721,22 +746,24 @@ export default function App() {
                 style={{ transformOrigin: "top", backfaceVisibility: "hidden" }}
                 className="absolute top-0 left-0 right-0 h-[55%] drop-shadow-2xl z-20 rounded-t-[2.25rem] clip-path-envelope flex flex-col items-center justify-start overflow-hidden pt-8 pointer-events-none"
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-sage to-rust" />
+                <div className="absolute inset-0 bg-envelope" />
                 <div className="absolute inset-0 opacity-22 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/18 via-transparent to-umber/25" />
-                <div className="absolute top-0 left-0 right-0 h-px bg-white/25" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/18 via-transparent to-black/10" />
+                <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <polygon points="0,0 50,100 100,0" fill="none" stroke="var(--color-envelope-border)" strokeWidth="4" vectorEffect="non-scaling-stroke" />
+                </svg>
 
                 <div className="relative z-10 flex flex-col items-center justify-center space-y-4 md:space-y-6 mt-2 md:mt-4 w-full">
                   {guestNameFromUrl ? (
-                    <span className="serif text-white/80 text-xl md:text-3xl tracking-[0.2em] md:tracking-[0.3em] uppercase text-center px-6 drop-shadow-md">
+                    <span className="serif text-umber text-xl md:text-3xl tracking-[0.2em] md:tracking-[0.3em] uppercase text-center px-6 drop-shadow-md font-medium">
                       {guestNameFromUrl}
                     </span>
                   ) : (
-                    <span className="serif text-white/50 text-lg md:text-3xl tracking-[0.4em] md:tracking-[0.6em] uppercase text-center px-4">
+                    <span className="serif text-umber/80 text-lg md:text-3xl tracking-[0.4em] md:tracking-[0.6em] uppercase text-center px-4 font-medium">
                       The Invitation
                     </span>
                   )}
-                  <div className="w-10 md:w-16 h-px bg-white/20" />
+                  <div className="w-10 md:w-16 h-px bg-umber/30" />
                 </div>
               </motion.div>
 
@@ -755,10 +782,10 @@ export default function App() {
                   >
                     <div className="w-24 h-24 md:w-32 md:h-32 rounded-full shadow-[0_18px_50px_-18px_rgba(0,0,0,0.65)] flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500 bg-paper/10 border border-white/30 p-1.5 backdrop-blur-md">
                       <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/14 via-transparent to-umber/25 pointer-events-none" />
-                      <div className="w-full h-full rounded-full bg-gradient-to-br from-sage to-rust shadow-[inset_0_-8px_18px_rgba(0,0,0,0.28),0_8px_18px_rgba(0,0,0,0.22)] flex items-center justify-center border border-white/14 relative overflow-hidden">
+                      <div className="w-full h-full rounded-full bg-envelope-border shadow-[inset_0_-8px_18px_rgba(0,0,0,0.28),0_8px_18px_rgba(0,0,0,0.22)] flex items-center justify-center border border-white/14 relative overflow-hidden">
                         <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 h-12 bg-paper/25 blur-2xl rounded-full" />
                         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_35%_30%,rgba(255,255,255,0.35)_0%,transparent_55%)]" />
-                        <Heart className="relative text-paper/90 w-10 h-10 md:w-14 md:h-14 drop-shadow-md mt-1" fill="currentColor" />
+                        <Heart className="relative text-umber w-10 h-10 md:w-14 md:h-14 drop-shadow-md mt-1" fill="currentColor" />
                       </div>
                     </div>
 
@@ -766,7 +793,7 @@ export default function App() {
                       animate={!reduceEffects ? { y: [0, 5, 0] } : { y: 0 }}
                       transition={!reduceEffects ? { repeat: Infinity, duration: 2, ease: "easeInOut" } : { duration: 0 }}
                     >
-                      <p className="serif text-white/75 tracking-[0.32em] uppercase text-[10px] md:text-xs whitespace-nowrap">
+                      <p className="serif text-umber tracking-[0.32em] uppercase text-[10px] md:text-xs whitespace-nowrap font-medium">
                         Tap to break seal
                       </p>
                     </motion.div>
@@ -908,18 +935,15 @@ export default function App() {
 
               {/* envelope body back */}
               <div className="absolute bottom-0 left-0 right-0 h-[64%] sm:h-[66%] md:h-[68%] rounded-b-[2.5rem] overflow-hidden z-10 shadow-[0_24px_70px_-12px_rgba(61,34,21,0.55)]">
-                <div className="absolute inset-0 bg-gradient-to-b from-umber via-rust/35 to-sienna/55" />
+                <div className="absolute inset-0 bg-envelope border-x-[4px] border-b-[4px] border-envelope-border rounded-b-[2.5rem]" />
                 <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-umber/25" />
-                <div className="absolute inset-x-0 top-0 h-[2px] bg-white/8" />
-                <div className="absolute inset-x-10 top-3 h-px bg-sand/15" />
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-white/10" />
-                <div className="absolute top-0 bottom-0 left-0 w-px bg-white/8" />
-                <div className="absolute top-0 bottom-0 right-0 w-px bg-white/8" />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10" />
+                <div className="absolute inset-x-0 top-0 h-[4px] bg-envelope-border" />
+                <div className="absolute inset-x-10 top-3 h-[2px] bg-envelope-border/70" />
                 <div className="absolute bottom-5 left-0 right-0 flex flex-col items-center gap-1 pointer-events-none">
-                  <div className="w-16 h-px bg-sand/45" />
-                  <p className="serif italic text-sand/55 text-[10px] tracking-[0.4em] uppercase">Official Invite · 2026</p>
-                  <div className="w-16 h-px bg-sand/45" />
+                  <div className="w-16 h-px bg-umber/30" />
+                  <p className="serif italic text-umber text-[10px] tracking-[0.4em] uppercase font-medium">Official Invite · 2026</p>
+                  <div className="w-16 h-px bg-umber/30" />
                 </div>
               </div>
 
@@ -932,26 +956,30 @@ export default function App() {
                 }}
               >
                 <div
-                  className="absolute inset-0 bg-gradient-to-br from-umber/95 via-rust/70 to-sienna/75"
+                  className="absolute inset-0 bg-envelope"
                   style={{
                     clipPath: "polygon(0 100%, 50% 0, 100% 100%)",
                   }}
                 >
                   <div className="absolute inset-0 opacity-25 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/0 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent" />
                 </div>
 
                 <div
-                  className="absolute inset-0 bg-gradient-to-b from-sage to-rust"
+                  className="absolute inset-0 bg-envelope"
                   style={{
                     clipPath: "polygon(3% 100%, 50% 10%, 97% 100%)",
                   }}
                 >
                   <div className="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/0 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-transparent" />
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-umber/35 to-transparent" />
+                <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <polygon points="3,100 50,10 97,100" fill="none" stroke="var(--color-envelope-border)" strokeWidth="4" vectorEffect="non-scaling-stroke" />
+                </svg>
+
+                <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
 
               {/* invitation card */}
@@ -1081,33 +1109,38 @@ export default function App() {
               {/* front flaps */}
               <div className="absolute bottom-0 left-0 right-0 h-[64%] sm:h-[66%] md:h-[68%] z-30 rounded-b-[2.5rem] overflow-hidden pointer-events-none">
                 <div
-                  className="absolute inset-0 bg-gradient-to-br from-umber via-rust/85 to-sienna/80"
+                  className="absolute inset-0 bg-envelope"
                   style={{
                     clipPath: "polygon(0 0, 50% 55%, 0 100%)",
                   }}
                 >
                   <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/6 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/6 to-black/10" />
                 </div>
 
                 <div
-                  className="absolute inset-0 bg-gradient-to-bl from-umber via-rust/85 to-sienna/80"
+                  className="absolute inset-0 bg-envelope"
                   style={{
                     clipPath: "polygon(100% 0, 50% 55%, 100% 100%)",
                   }}
                 >
                   <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
-                  <div className="absolute inset-0 bg-gradient-to-bl from-white/6 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-bl from-white/6 to-black/10" />
                 </div>
 
+                <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <polyline points="0,0 50,55 0,100" fill="none" stroke="var(--color-envelope-border)" strokeWidth="4" vectorEffect="non-scaling-stroke" />
+                  <polyline points="100,0 50,55 100,100" fill="none" stroke="var(--color-envelope-border)" strokeWidth="4" vectorEffect="non-scaling-stroke" />
+                </svg>
+
                 <div
-                  className="absolute inset-0 bg-umber/25"
+                  className="absolute inset-0 bg-envelope-border/25"
                   style={{
                     clipPath: "polygon(45% 50%, 50% 55%, 55% 50%, 50% 48%)",
                   }}
                 />
 
-                <div className="absolute top-0 left-0 right-0 h-7 bg-gradient-to-b from-umber/25 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-7 bg-gradient-to-b from-black/10 to-transparent" />
               </div>
             </motion.div>
           )}
@@ -1332,6 +1365,40 @@ export default function App() {
             />
           </motion.div>
         </div>
+
+        {/* Gallery Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="w-full py-10 md:py-20 overflow-hidden relative"
+        >
+          <div className="text-center mb-8 md:mb-16 space-y-4">
+            <h3 className="serif text-4xl md:text-6xl text-sage drop-shadow-sm">Moments</h3>
+            <p className="text-[10px] md:text-sm uppercase tracking-[0.4em] text-zinc-400">Our Journey Together</p>
+          </div>
+
+          <div className="relative w-[100vw] left-1/2 -translate-x-1/2 overflow-hidden flex">
+            {/* Left and right fade gradients */}
+            <div className="absolute top-0 bottom-0 left-0 w-16 md:w-48 bg-gradient-to-r from-[#FDFBF7] to-transparent z-10 pointer-events-none" />
+            <div className="absolute top-0 bottom-0 right-0 w-16 md:w-48 bg-gradient-to-l from-[#FDFBF7] to-transparent z-10 pointer-events-none" />
+
+            <div className="flex w-max animate-marquee gap-4 md:gap-8 px-4">
+              {[...galleryImages, ...galleryImages].map((img, i) => (
+                <div key={i} className="relative w-[280px] h-[380px] md:w-[400px] md:h-[550px] shrink-0 rounded-2xl md:rounded-[2rem] overflow-hidden group shadow-xl border border-white/50">
+                  <div className="absolute inset-0 bg-sage/10 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none" />
+                  <img
+                    src={img}
+                    alt="Couple Moment"
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
 
         <motion.footer
           initial={{ opacity: 0 }}
