@@ -20,27 +20,13 @@ import {
 } from "lucide-react";
 
 const galleryImages = [
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.16 (1).jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.16.jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.39.jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.40 (1).jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.40 (2).jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.40.jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.41 (1).jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.41.jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.42 (1).jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.42.jpeg",
-
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.44 (1).jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.44.jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.45 (1).jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.45.jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.46 (1).jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.46.jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.47 (1).jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.47.jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.48.jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.49 (1).jpeg"
+  "/pre/WhatsApp Image 2026-06-21 at 23.15.40.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 23.16.00.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 23.16.20.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 23.16.35.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 23.17.01.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 23.17.16.jpeg",
+  "/pre/WhatsApp Image 2026-06-21 at 23.19.04.jpeg"
 ];
 
 // FlipCard Component with 3D Tilt Effect + Premium Mobile Tap Hint

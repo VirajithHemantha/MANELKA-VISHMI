@@ -18,16 +18,18 @@
   --font-sans: "Inter", sans-serif;
 
   /* Primary accent — drives all `sage` classes */
-  --color-sage:   #D4AF37;   /* Champagne Gold */
+  --color-sage: #D4AF37;
+  /* Champagne Gold */
 
   /* Background — drives all `paper` classes */
-  --color-paper:  #FDFBF7;   /* Luminous Ivory */
+  --color-paper: #FDFBF7;
+  /* Luminous Ivory */
 
   /* Extended boho palette */
-  --color-sand:   #EAE0D1;
-  --color-taupe:  #B8A99A;
-  --color-rust:   #B89C54;
-  --color-umber:  #5A4D3B;
+  --color-sand: #EAE0D1;
+  --color-taupe: #B8A99A;
+  --color-rust: #B89C54;
+  --color-umber: #5A4D3B;
   --color-sienna: #8C7752;
 
   /* Envelope Colors */
@@ -109,8 +111,13 @@ body {
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
