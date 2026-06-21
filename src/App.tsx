@@ -30,8 +30,7 @@ const galleryImages = [
   "/pre/WhatsApp Image 2026-06-21 at 00.03.41.jpeg",
   "/pre/WhatsApp Image 2026-06-21 at 00.03.42 (1).jpeg",
   "/pre/WhatsApp Image 2026-06-21 at 00.03.42.jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.43 (1).jpeg",
-  "/pre/WhatsApp Image 2026-06-21 at 00.03.43.jpeg",
+
   "/pre/WhatsApp Image 2026-06-21 at 00.03.44 (1).jpeg",
   "/pre/WhatsApp Image 2026-06-21 at 00.03.44.jpeg",
   "/pre/WhatsApp Image 2026-06-21 at 00.03.45 (1).jpeg",
