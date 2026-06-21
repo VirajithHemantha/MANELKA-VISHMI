@@ -335,7 +335,7 @@ function RSVPForm() {
       <p className="text-[10px] md:text-xs text-zinc-500 uppercase tracking-widest mb-4 md:mb-6 text-center leading-relaxed">
         Please let us know by
         <br />
-        20.06.2026
+        25.06.2026
       </p>
 
       <form onSubmit={submit} className="space-y-4 md:space-y-4 px-1 md:px-2">
@@ -1085,7 +1085,7 @@ export default function App() {
                           JULY · WEDNESDAY
                         </span>
                         <span className="text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-taupe font-bold">
-                          7:00 PM · 2026
+                          6:00 PM · 2026
                         </span>
                         <span className="serif mt-1 block max-w-[200px] px-2 text-[10px] sm:text-[11px] md:text-[12px] uppercase tracking-[0.12em] text-umber/75 text-center leading-snug break-words font-medium">
                           PARADISE INN, BODGODA
@@ -1351,7 +1351,7 @@ export default function App() {
                     </div>
 
                     <div className="flex items-start gap-2 md:gap-4 mt-4 md:mt-6">
-                      <span className="serif text-sage font-bold text-[10px] md:text-base w-12 md:w-20 text-right shrink-0 pt-1">7:00 PM</span>
+                      <span className="serif text-sage font-bold text-[10px] md:text-base w-12 md:w-20 text-right shrink-0 pt-1">6:00 PM</span>
                       <div className="w-px h-full bg-sage/30 relative mt-2 -ml-[1px] md:-ml-2 shrink-0">
                         <div className="absolute top-0 -left-[3px] w-2 h-2 rounded-full bg-sage" />
                       </div>
