@@ -450,6 +450,178 @@ function RSVPForm() {
   );
 }
 
+function GallerySection() {
+  const [activeMobileIndex, setActiveMobileIndex] = useState(0);
+  const mobileIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    mobileIntervalRef.current = setInterval(() => {
+      setActiveMobileIndex((prev) => (prev + 1) % galleryImages.length);
+    }, 4500);
+    return () => {
+      if (mobileIntervalRef.current) clearInterval(mobileIntervalRef.current);
+    };
+  }, []);
+
+  const galleryContainerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.16,
+        delayChildren: 0.12,
+      },
+    },
+  };
+
+  const galleryItemVariants = {
+    hidden: { opacity: 0, x: -42, y: 18, scale: 0.98, clipPath: "inset(0 100% 0 0)" },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      scale: 1,
+      clipPath: "inset(0 0% 0 0)",
+      transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  return (
+    <div className="w-full py-10 md:py-20 overflow-hidden relative">
+      <div className="absolute top-0 left-0 w-[38vw] h-[38vw] bg-sage/30 blur-[140px] rounded-full opacity-20 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[36vw] h-[36vw] bg-sage/10 blur-[120px] rounded-full opacity-30 pointer-events-none" />
+
+      <div className="w-full relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center text-center mb-10 md:mb-20 px-2"
+        >
+          <div className="inline-flex items-center gap-4 mb-6">
+            <div className="h-px w-10 bg-sage" />
+            <span className="text-umber/70 font-bold uppercase tracking-[0.35em] md:tracking-[0.45em] text-[8px] md:text-[11px]">Our Gallery</span>
+            <div className="h-px w-10 bg-sage" />
+          </div>
+          <h2 className="serif text-[2.55rem] sm:text-[3.6rem] md:text-[4.8rem] text-umber leading-none drop-shadow-sm px-2">
+            Little Golden Memories
+          </h2>
+          <p className="mt-4 md:mt-5 text-zinc-500 text-sm md:text-base font-light leading-relaxed max-w-2xl px-3">
+            A small collection of moments that capture the mood, the warmth, and the quiet joy behind our day.
+          </p>
+        </motion.div>
+
+        {/* Desktop Premium Masonry Grid */}
+        <motion.div
+          variants={galleryContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-10%" }}
+          className="hidden md:grid md:grid-cols-12 md:gap-8 md:auto-rows-auto items-start"
+        >
+          {galleryImages.map((src, index) => {
+            const patternIndex = index % 4;
+            const spanClass =
+              patternIndex === 0
+                ? "md:col-span-12 lg:col-span-7"
+                : patternIndex === 1
+                  ? "md:col-span-6 lg:col-span-5"
+                  : patternIndex === 2
+                    ? "md:col-span-6 lg:col-span-4"
+                    : "md:col-span-12 lg:col-span-8";
+
+            const archClass = "rounded-t-full";
+
+            return (
+              <motion.figure
+                key={src + index}
+                variants={galleryItemVariants}
+                className={`group relative overflow-hidden bg-white shadow-[0_45px_100px_-25px_rgba(0,0,0,0.15)] border-[12px] border-white transition-all duration-[1s] hover:shadow-[0_60px_120px_-30px_rgba(212,175,55,0.3)] ${spanClass} ${archClass} rounded-b-[2rem] hover:-translate-y-4`}
+              >
+                <div className={`absolute inset-0 border border-sage/20 ${archClass} rounded-b-[1.5rem] pointer-events-none z-20`} />
+                <div className={`absolute inset-2 border-[0.5px] border-sage/30 ${archClass} rounded-b-[1.2rem] pointer-events-none z-20`} />
+
+                <div className="absolute top-8 right-8 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <Sparkles className="w-6 h-6 text-sage" />
+                </div>
+
+                <div className="overflow-hidden relative w-full h-full">
+                  <img
+                    src={src}
+                    alt="Gallery Moment"
+                    loading="lazy"
+                    className="w-full h-full object-cover object-center transition-transform duration-[2000ms] group-hover:scale-110 scale-100 min-h-[300px]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-umber/10 via-transparent to-white/10 opacity-60 group-hover:opacity-20 transition-opacity duration-1000" />
+                </div>
+              </motion.figure>
+            );
+          })}
+        </motion.div>
+
+        {/* Mobile Premium Auto-Loading Slider */}
+        <div className="md:hidden relative w-full px-2">
+          <div className="relative aspect-[4/6] w-full max-w-[320px] mx-auto perspective-1000">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeMobileIndex}
+                initial={{ opacity: 0, x: -60, filter: "blur(10px)", scale: 0.9 }}
+                animate={{ opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }}
+                exit={{ opacity: 0, x: 60, filter: "blur(10px)", scale: 0.9 }}
+                transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
+                className="relative w-full h-full rounded-t-full rounded-b-2xl overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.35)] border-[8px] border-white bg-white"
+              >
+                <motion.div
+                  initial={{ x: "-100%" }}
+                  animate={{ x: "200%" }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear", repeatDelay: 1 }}
+                  className="absolute inset-0 z-20 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
+                />
+
+                <img
+                  src={galleryImages[activeMobileIndex]}
+                  alt="Gallery Moment"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+
+                <div className="absolute inset-x-0 bottom-8 z-30 flex flex-col items-center px-6">
+                  <div className="flex justify-center gap-1.5 flex-wrap">
+                    {galleryImages.map((_, i) => (
+                      <div
+                        key={i}
+                        className={`h-[1.5px] rounded-full transition-all duration-1000 ${i === activeMobileIndex ? "w-6 bg-sage" : "w-1.5 bg-white/60"}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                <motion.div
+                  initial={{ x: "-100%" }}
+                  animate={{ x: "100%" }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="absolute inset-0 z-40 bg-white/10 backdrop-blur-[2px] pointer-events-none"
+                />
+              </motion.div>
+            </AnimatePresence>
+
+            <div className="absolute inset-[-4px] rounded-t-full rounded-b-[1.5rem] border border-sage/20 pointer-events-none z-40" />
+            <div className="absolute inset-2 border-[0.5px] border-sage/30 rounded-t-full rounded-b-[1.2rem] pointer-events-none z-40" />
+          </div>
+
+          <div className="mt-12 max-w-[120px] mx-auto h-[1.5px] bg-sage/20 rounded-full overflow-hidden">
+            <motion.div
+              key={activeMobileIndex}
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 4.5, ease: "linear" }}
+              className="h-full bg-sage"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const urlParams = new URLSearchParams(window.location.search);
   const guestNameFromUrl = urlParams.get("to");
@@ -1367,38 +1539,7 @@ export default function App() {
         </div>
 
         {/* Gallery Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="w-full py-10 md:py-20 overflow-hidden relative"
-        >
-          <div className="text-center mb-8 md:mb-16 space-y-4">
-            <h3 className="serif text-4xl md:text-6xl text-sage drop-shadow-sm">Moments</h3>
-            <p className="text-[10px] md:text-sm uppercase tracking-[0.4em] text-zinc-400">Our Journey Together</p>
-          </div>
-
-          <div className="relative w-[100vw] left-1/2 -translate-x-1/2 overflow-hidden flex">
-            {/* Left and right fade gradients */}
-            <div className="absolute top-0 bottom-0 left-0 w-16 md:w-48 bg-gradient-to-r from-[#FDFBF7] to-transparent z-10 pointer-events-none" />
-            <div className="absolute top-0 bottom-0 right-0 w-16 md:w-48 bg-gradient-to-l from-[#FDFBF7] to-transparent z-10 pointer-events-none" />
-
-            <div className="flex w-max animate-marquee gap-4 md:gap-8 px-4">
-              {[...galleryImages, ...galleryImages].map((img, i) => (
-                <div key={i} className="relative w-[280px] h-[380px] md:w-[400px] md:h-[550px] shrink-0 rounded-2xl md:rounded-[2rem] overflow-hidden group shadow-xl border border-white/50">
-                  <div className="absolute inset-0 bg-sage/10 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none" />
-                  <img
-                    src={img}
-                    alt="Couple Moment"
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+        <GallerySection />
 
         <motion.footer
           initial={{ opacity: 0 }}
