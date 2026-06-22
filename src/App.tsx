@@ -221,7 +221,7 @@ type GuestEntry = {
 
 function RSVPForm() {
   const endpoint = "https://script.google.com/macros/s/AKfycbzPNMtKWYGUeTCY6VpTqXUx2SCnLav3pVzaTc_0Dvx-cEHxYuWleC-NUByLE1RwSuVJ/exec";
-  
+
   const urlParams = new URLSearchParams(window.location.search);
   const guestNameFromUrl = urlParams.get("to") || "";
 
@@ -1245,7 +1245,7 @@ export default function App() {
                           6:00 PM · 2026
                         </span>
                         <span className="serif mt-1 block max-w-[200px] px-2 text-[10px] sm:text-[11px] md:text-[12px] uppercase tracking-[0.12em] text-umber/75 text-center leading-snug break-words font-medium">
-                          PARADISE INN, BODGODA
+                          PARADISE INN, BOLGODA
                         </span>
                       </div>
                       <div className="h-px flex-1 bg-sand/45" />
@@ -1398,7 +1398,7 @@ export default function App() {
                 <div className="w-full h-full relative group">
                   <img
                     src="/WhatsApp Image 2026-06-11 at 23.02.11.jpeg"
-                    alt="Paradise Inn"
+                    alt="Paradise Inn Bolgoda"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
@@ -1411,7 +1411,7 @@ export default function App() {
                     <h3 className="serif text-2xl md:text-5xl text-sage leading-tight drop-shadow-sm font-medium">
                       Paradise Inn
                       <br />
-                      Bodgoda
+                      Bolgoda
                     </h3>
 
                     <motion.button
@@ -1427,18 +1427,18 @@ export default function App() {
 
                   <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-sage flex items-center gap-3 bg-white/60 backdrop-blur-md px-4 py-2 rounded-full border border-white/60 shadow-lg">
                     <MapPin className="text-sage animate-bounce" size={16} />
-                    <p className="serif text-[10px] md:text-sm tracking-[0.2em] font-bold uppercase">Paradise Inn</p>
+                    <p className="serif text-[10px] md:text-sm tracking-[0.2em] font-bold uppercase">Paradise Inn Bolgoda</p>
                   </div>
                 </div>
               }
               back={
                 <>
                   <MapPin size={24} className="text-sage mb-4 md:mb-6 opacity-70 md:w-9 md:h-9" />
-                  <h4 className="serif text-2xl md:text-4xl text-sage mb-2 md:mb-4">Paradise Inn, Bodgoda</h4>
+                  <h4 className="serif text-2xl md:text-4xl text-sage mb-2 md:mb-4">Paradise Inn, Bolgoda</h4>
                   <p className="text-[10px] md:text-sm text-zinc-500 uppercase tracking-widest leading-loose mb-4 md:mb-6">
                     Paradise Inn
                     <br />
-                    Bodgoda
+                    Bolgoda
                   </p>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
