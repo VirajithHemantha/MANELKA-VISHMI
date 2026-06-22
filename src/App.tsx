@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 
 const galleryImages = [
+  "/1.jpeg",
   "/pre/WhatsApp Image 2026-06-21 at 23.15.40.jpeg",
   "/pre/WhatsApp Image 2026-06-21 at 23.16.00.jpeg",
   "/pre/WhatsApp Image 2026-06-21 at 23.16.20.jpeg",
